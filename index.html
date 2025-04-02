@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Section -->
+    <div id="loginSection" class="login-container">
+        <div class="login-box">
+            <h1>Blood Bank Management System</h1>
+            <p>"Donate blood, save lives. A single pint can save three lives!"</p>
+            <p><b>Created by Bhuvanesh and Team</b></p>
+
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="loginError" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboardSection" style="display: none;">
+        <header>
+            <h1>Blood Bank Management System</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Donors</a></li>
+                <li><a href="#">Recipients</a></li>
+                <li><a href="#">Inventory</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+
+        <section class="container">
+            <h2>Welcome to Blood Bank Management System</h2>
+            <p>Find and donate blood efficiently.</p>
+            
+            <!-- Separate buttons -->
+            <button onclick="showForm('donorForm')">Become a Donor</button>
+            <button onclick="showForm('recipientForm')">Request Blood</button>
+            <button onclick="showInventory()">View Inventory</button>
+
+            <!-- Donor Form -->
+            <div id="donorForm" class="form-container">
+                <h3>Donor Registration</h3>
+                <form id="donorFormElement">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="Blood Group" required>
+                    <input type="number" placeholder="Age" required>
+                    <input type="text" placeholder="City" required>
+                    <button type="submit">Register</button>
+                </form>
+                <p id="donorSuccess" class="success-message"></p>
+            </div>
+
+            <!-- Recipient Form -->
+            <div id="recipientForm" class="form-container">
+                <h3>Blood Request</h3>
+                <form id="recipientFormElement">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="Required Blood Group" required>
+                    <input type="text" placeholder="Hospital Name" required>
+                    <button type="submit">Request Blood</button>
+                </form>
+                <p id="recipientSuccess" class="success-message"></p>
+            </div>
+
+            <!-- Inventory Section -->
+            <div id="inventorySection" class="form-container">
+                <h3>Blood Inventory</h3>
+                <table>
+                    <tr>
+                        <th>Blood Group</th>
+                        <th>Available Units</th>
+                    </tr>
+                    <tr><td>A+</td><td>15</td></tr>
+                    <tr><td>A-</td><td>8</td></tr>
+                    <tr><td>B+</td><td>10</td></tr>
+                    <tr><td>B-</td><td>5</td></tr>
+                    <tr><td>O+</td><td>20</td></tr>
+                    <tr><td>O-</td><td>4</td></tr>
+                    <tr><td>AB+</td><td>12</td></tr>
+                    <tr><td>AB-</td><td>3</td></tr>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
